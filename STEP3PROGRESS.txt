@@ -1,4 +1,1 @@
-Used Python to create and command prompt for listing an API
-Learnt about different kinds of API's from the udemy lectures
-Created a JSON file
-Learnt about POST and GET commands
+ENTERING MY PROGRES HERE FOR EACH STEP=
