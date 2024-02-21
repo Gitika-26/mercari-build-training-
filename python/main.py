@@ -33,7 +33,7 @@ def root():
 @app.get("/items")
 def read_file():
     data = read()  
-    return data
+    return(data)
 
 
 
