@@ -4,6 +4,7 @@ import pathlib
 from fastapi import FastAPI, Form, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+import json
 
 app = FastAPI()
 logger = logging.getLogger("uvicorn")
@@ -18,10 +19,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+def read():
+    with open("C:/Users/phgtk/items.json", 'r') as file:
+        json_data = file.read()
+        parsed_data = json.loads(json_data)
+    return(parsed_data)
+
 
 @app.get("/")
 def root():
     return {"message": "Hello, world!"}
+
+@app.get("/items")
+def read_file():
+    data = read()  
+    return data
+
 
 
 @app.post("/items")
